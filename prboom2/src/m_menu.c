@@ -3300,25 +3300,25 @@ static const char *gen_skillstrings[] = {
 
 static const char *gen_compstrings[] =
 {
-  "Default",
-  "Doom v1.2",
-  "Doom v1.666",
-  "Doom/2 v1.9",
-  "Ultimate Doom",
-  "Final Doom",
-  "DosDoom",
-  "TASDoom",
-  "Boom's vanilla",
-  "Boom v2.01",
-  "Boom",
-  "LxDoom",
-  "MBF",
-  "PrBoom 2.03b",
-  "PrBoom 2.1.x",
-  "PrBoom 2.2.x",
-  "PrBoom 2.3.x",
-  "PrBoom 2.4.0",
-  "Latest PrBoom+",
+  "Default\n(complevel 17)",
+  "Doom v1.2\n(complevel 0)",
+  "Doom v1.666\n(complevel 1)",
+  "Doom/2 v1.9\n(complevel 2)",
+  "Ultimate Doom\n(complevel 3)",
+  "Final Doom\n(complevel 4)",
+  "DosDoom\n(complevel 5)",
+  "TASDoom\n(complevel 6)",
+  "Boom's vanilla\n(complevel 7)",
+  "Boom v2.01\n(complevel 8)",
+  "Boom\n(complevel 9)",
+  "LxDoom\n(complevel 10)",
+  "MBF\n(complevel 11)",
+  "PrBoom 2.03b\n(complevel 12)",
+  "PrBoom 2.1.x\n(complevel 13)",
+  "PrBoom 2.2.x\n(complevel 14)",
+  "PrBoom 2.3.x\n(complevel 15)",
+  "PrBoom 2.4.0\n(complevel 16)",
+  "Latest PrBoom+\n(complevel 17)",
   NULL
 };
 
@@ -3339,10 +3339,10 @@ setup_menu_t gen_settings2[] = { // General Settings screen2
   {"Game speed, percentage of normal", S_NUM|S_PRGWARN, m_null, G_X, G_Y+13*8, {"realtic_clock_rate"}},
   {"Default skill level",              S_CHOICE,        m_null, G_X, G_Y+14*8, {"default_skill"}, 0, 0, NULL, gen_skillstrings},
   {"Default compatibility level",      S_CHOICE,        m_null, G_X, G_Y+15*8, {"default_compatibility_level"}, 0, 0, NULL, &gen_compstrings[1]},
-  {"Show ENDOOM screen",               S_YESNO,         m_null, G_X, G_Y+16*8, {"showendoom"}},
-  {"Fullscreen menu background",       S_YESNO, m_null, G_X, G_Y + 17*8, {"menu_background"}},
+  {"Show ENDOOM screen",               S_YESNO,         m_null, G_X, G_Y+17*8, {"showendoom"}},
+  {"Fullscreen menu background",       S_YESNO, m_null, G_X, G_Y + 18*8, {"menu_background"}},
 #ifdef USE_WINDOWS_LAUNCHER
-  {"Use In-Game Launcher",             S_CHOICE,        m_null, G_X, G_Y+ 18*8, {"launcher_enable"}, 0, 0, NULL, launcher_enable_states},
+  {"Use In-Game Launcher",             S_CHOICE,        m_null, G_X, G_Y+ 19*8, {"launcher_enable"}, 0, 0, NULL, launcher_enable_states},
 #endif
 
 
