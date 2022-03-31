@@ -4442,9 +4442,15 @@ static void M_DrawString(int cx, int cy, int color, const char* ch)
 {
   int   w;
   int   c;
+  int   ix = cx;
 
   while (*ch) {
     c = *ch++;         // get next char
+    while (c == '\n') {
+      cx = ix;
+      cy += 8;
+      c = *ch++;
+    }
     c = toupper(c) - HU_FONTSTART;
     if (c < 0 || c> HU_FONTSIZE)
       {
