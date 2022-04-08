@@ -737,10 +737,15 @@ void D_AddFile (const char *file, wad_source_t source)
   wadfiles[numwadfiles].src = source; // Ty 08/29/98
   wadfiles[numwadfiles].handle = 0;
 
-  // No Rest For The Living
   len=strlen(wadfiles[numwadfiles].name);
+  // No Rest For The Living
   if (len>=9 && !strnicmp(wadfiles[numwadfiles].name+len-9,"nerve.wad",9))
     gamemission = pack_nerve;
+  // SIGIL (episode 5)
+  if (len >= 14 && (
+        !strnicmp(wadfiles[numwadfiles].name+len-14, "SIGIL_v1_2.wad", 14) ||
+        !strnicmp(wadfiles[numwadfiles].name+len-15, "SIGIL_v1_21.wad", 15)))
+    gamemission = pack_sigil;
 
   numwadfiles++;
   // proff: automatically try to add the gwa files
@@ -2105,6 +2110,16 @@ static void D_DoomMainSetup(void)
 		  const unsigned char * lump = (const unsigned char *)W_CacheLumpNum(p);
 		  ParseUMapInfo(lump, W_LumpLength(p), I_Error);
 		  umapinfo_loaded = true;
+	  }
+
+	  if (gamemission == pack_sigil)
+	  {
+		  int lump = (W_CheckNumForName)("SIGILUM", ns_prboom);
+		  if (lump != -1)
+		  {
+			  const unsigned char * cache = (const unsigned char *)W_CacheLumpNum(lump);
+			  ParseUMapInfo(cache, W_LumpLength(lump), I_Error);
+		  }
 	  }
   }
 

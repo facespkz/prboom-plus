@@ -82,6 +82,7 @@ typedef enum {
   pack_tnt,     // TNT mission pack
   pack_plut,    // Plutonia pack
   pack_nerve,   // No Rest For The Living
+  pack_sigil,   // SIGIL (episode 5)
   hacx,         // HACX - Twitch 'n Kill
   chex,         // Chex Quest
   none

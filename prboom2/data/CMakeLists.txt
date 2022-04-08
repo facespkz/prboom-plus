@@ -56,6 +56,7 @@ set(TABLES
     lumps/chexdeh.lmp
     lumps/bfgbex.lmp
     lumps/nervebex.lmp
+    lumps/sigilum.lmp
     lumps/glshadow.lmp
     lumps/glfp.lmp
     lumps/glvp.lmp
